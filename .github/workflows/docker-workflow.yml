@@ -40,10 +40,7 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: |
-            org.opencontainers.image.revision=${{ github.sha }}
-            org.opencontainers.image.created=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
-            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+          labels: ${{ steps.meta.outputs.labels }}
       
   deploy:
     needs: build
