@@ -81,4 +81,4 @@ jobs:
       - name: Deploy files
         run: |
           helm show chart oci://registry-1.docker.io/sofiamosquera/sm-chart --version 7
-          helm upgrade --install ${{ install_name }} oci://registry-1.docker.io/sofiamosquera/sm-chart --version 7 --values values.yaml
+          helm upgrade --install ${{ inputs.install_name }} oci://registry-1.docker.io/sofiamosquera/sm-chart --version 7 --values values.yaml
